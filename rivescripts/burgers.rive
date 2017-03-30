@@ -1,0 +1,24 @@
+! version = 2.0
+
+! array hello = hello hi hey yo aloh hallo allo howdy
+	^ good morning|good day|hi there|anybody home|anyone home
+! array bye = bye goodbye goodby byebye buhbye goodnight adios cya aurevoir
+	^ buh bye|hasta la vista|hasta luego|have to go|got to go|g2g|gtg|c ya
+	^ have a good night|good night|see you later|catch you later|by by|bye bye
+	^ i want to leave|i need to go|i going|i leaving
+
++ @hello
+* <get isOnboarded> == true => {@int ask for location}
+- {@int onboard user}
+
++ int ask for location
+- Tell me where you're at so I can send you some recommendations.
+
++ int onboard user
+- <set isOnboarded=true>
+^ Hi There!\n
+^ I'll help you find burgers or beer near you.\n
+^ {@ int ask for location}
+
++ print something
+- !code printSomething | Aaron
