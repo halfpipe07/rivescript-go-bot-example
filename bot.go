@@ -25,11 +25,14 @@ var funcs = map[string]func([]string) string{
 	"printSomething": doSomething,
 }
 
+var bot *BotBrain
+
 func main() {
 	message := os.Args[1]
 	fmt.Println(message)
 	// Get a reply.
-	// // bot := New() // reply, _ := bot.Reply("local-user", message)
+	// // bot = New()
+	// reply, _ := bot.Reply("local-user", message)
 	args := []string{message}
 	reply := getIntent(args)
 	fmt.Println(reply)
