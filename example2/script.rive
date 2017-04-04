@@ -1,0 +1,43 @@
+! version = 2.0
+
+! array hi = hi hello heya yo ahoy
+  ^ hey there| hello world|
+! array yes = yes yeah ok
+! array no  = no nope nah
+
+
++ @hi
+* <get mood> == undefined => How are you?
+- Hi there!
+- Heya.
+
+
+
++ *
+% [*] how are you
+- <set mood=<star>>Great that you're <star>\nHow old are you?
+
++ #
+% [*] how old are you
+- <set age=<star1>>Ok, you're <star1>. What's your email address?
+
++ *
+% [*] email address
+- <set email=<star>>Ok. Thanks
+
++ info
+- Your mood is <get mood>.\n
+^ You are <get age> years old and your email address is <get email>!\n
+
++ @yes
+% * is that correct
+- Great. See you soon.
+
++ @no
+% * is that correct
+- Oh no! Let's start over again. How are you?
+
++ *
+- Wat?
+- I don't get it
+- No entiendo, señor

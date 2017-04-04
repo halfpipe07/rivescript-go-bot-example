@@ -6,10 +6,39 @@
 	^ buh bye|hasta la vista|hasta luego|have to go|got to go|g2g|gtg|c ya
 	^ have a good night|good night|see you later|catch you later|by by|bye bye
 	^ i want to leave|i need to go|i going|i leaving
+! array thanks = thanks
+  ^ |thank you|
+! array positive = great wonderful
+  ^ |i love it|
+
+
 
 + @hello
 * <get isOnboarded> == true => {@int ask for location}
 - {@int onboard user}
+
++ menu
+- {@int menu}
+
+
++ @thanks
+- You're welcome!
+- No problem.
+- I'm at your service.
+- I love to help.
+- Any time.
+- Let me know if you need anything else.
+- Cheers
+- np
+
+
+
++ @positive
+- I aim to please
+- Cheers
+- Any time
+
+
 
 + int ask for location
 - Tell me where you're at so I can send you some recommendations.
@@ -20,5 +49,54 @@
 ^ I'll help you find burgers or beer near you.\n
 ^ {@ int ask for location}
 
-+ print something
-- !code printSomething | Aaron
+
+
++ intent view location
+- We're located at {@int address}
+- You'll find us at {@int address}
+
++ int address
+-  the corner of Foo St and Bar Ave
+
+
+
++ intent view menu
+- Here's what we have today {@int menu}
+- Our dishes are {@int menu}
+- On them menu today is {@int menu}
+
++ int menu
+- \nBreakfast\n
+^ 2 eggs any way\n
+^ Pancakes\n
+^ Plate of bacon\n
+^\n
+^ Lunch\n
+^ Club sandwich\n
+^ Schweinshaxen\n
+^ Knödel Knödel\n
+^\n
+^ Dinner\n
+^ Pig Face\n
+^ Pig Belly\n
+^ Pig Whole\n
+
+
+
++ [*] foo [*]
+- bar
+- baz
+
+
+
++ intent default fallback intent
+- Sorry, I have no idea what that means
+- WHAT??!!!
+- No idea what you're on about...
+- Do you hear the words coming out of my mouth?!
+- Nope. Nope. Nope...
+
+
+
++ *
+- <call>getIntent <star></call>

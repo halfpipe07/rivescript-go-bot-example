@@ -1,0 +1,14 @@
+! version = 2.0
+
+! array hi = hi hello heya yo ahoy
+  ^ hey there| hello world|
+
+
++ @hi
+- How are you?
+
+
++ *
+- Wat?
+- I don't get it
+- No entiendo, señor
